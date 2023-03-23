@@ -1,12 +1,9 @@
-# academy_backend
+# Academy Backend
 
-[![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
-[![License: MIT][license_badge]][license_link]
-[![Powered by Dart Frog](https://img.shields.io/endpoint?url=https://tinyurl.com/dartfrog-badge)](https://dartfrog.vgv.dev)
+## Setup
 
-An example application built with dart_frog
+1. [Install mongoDb](https://www.mongodb.com/docs/manual/installation/)
+2. Run `mongosh` in your terminal
+3. Run `use academy-local`
+4. Import data into your local db. In the root you'll find a file called `seed-data.json` which you can use to populate your database. Run `mongoimport --jsonArray -d academy-local -c courses --file seed-data.json` 
 
-[license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[license_link]: https://opensource.org/licenses/MIT
-[very_good_analysis_badge]: https://img.shields.io/badge/style-very_good_analysis-B22C89.svg
-[very_good_analysis_link]: https://pub.dev/packages/very_good_analysis

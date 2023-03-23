@@ -2,7 +2,7 @@ import 'package:mongo_dart/mongo_dart.dart';
 
 /// The connection and type safe interfact of the mongo database
 class MongoDatabase {
-  final db = Db('mongodb://localhost:27017/test');
+  final db = Db('mongodb://localhost:27017/academy-local');
 
   Future<void> initialise() async {
     print('MongoDatabase initialise');
