@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 
-import '../data/mongo_database.dart';
+import '../data/postgres_database.dart';
 
 Future<GetIt> setupLocator() async {
   final locator = GetIt.asNewInstance();

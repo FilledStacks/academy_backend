@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:dart_frog/dart_frog.dart';
 import 'package:get_it/get_it.dart';
 
-import '../data/mongo_database.dart';
+import '../data/postgres_database.dart';
 
 FutureOr<Response> onRequest(RequestContext context) async {
   final locator = await context.read<Future<GetIt>>();
