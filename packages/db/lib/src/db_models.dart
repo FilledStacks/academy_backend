@@ -9,6 +9,84 @@ abstract class DbUser {
   @PrimaryKey()
   @AutoIncrement()
   int get id;
-
+  String? get authId;
+  String get email;
   String get name;
+
+  String? get paymentAccountId;
+  List<DbPurchase> get purchases;
+  List<DbProgress> get progressEntries;
+}
+
+@Model()
+abstract class DbPurchase {
+  @PrimaryKey()
+  @AutoIncrement()
+  int get id;
+
+  String get itemId;
+  DateTime get date;
+  int get coursePrice;
+  int get purchasePrice;
+  String get purchaseRef;
+  int get type;
+}
+
+@Model()
+abstract class DbProgress {
+  @PrimaryKey()
+  @AutoIncrement()
+  int get id;
+
+  DbCourse get course;
+  DbUser get user;
+  DbChapterProgress get chapterProgress;
+}
+
+@Model()
+abstract class DbChapterProgress {
+  @PrimaryKey()
+  @AutoIncrement()
+  int get id;
+
+  DbChapter get chapter;
+  int get lastTimeStamp;
+  bool get completed;
+}
+
+@Model()
+abstract class DbCourse {
+  @PrimaryKey()
+  @AutoIncrement()
+  int get id;
+
+  String get title;
+  String get description;
+  int get price;
+  List<String> get benefits;
+
+  List<DbModule> get modules;
+}
+
+@Model()
+abstract class DbModule {
+  @PrimaryKey()
+  @AutoIncrement()
+  int get id;
+
+  String get title;
+  int get price;
+  List<DbChapter> get chapters;
+}
+
+@Model()
+abstract class DbChapter {
+  @PrimaryKey()
+  @AutoIncrement()
+  int get id;
+
+  String get title;
+  String get description;
+  String get videoId;
+  int get price;
 }
